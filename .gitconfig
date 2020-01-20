@@ -1,0 +1,35 @@
+[user]
+    name = Masayuki Sunahara
+    email = tamanishi@gmail.com
+[alias]
+    stash-all = stash save --include-untracked
+    log-graph = log --graph --date=short --pretty=format:'%Cgreen%h %cd %Cblue%cn %Creset%s'
+    log-all = log --graph --all --color --pretty='%x09%h %cn%x09%s %Cred%d%Creset'
+    alias = !git config --get-regexp '^alias\\.' | sed 's/alias\\.\\([^ ]*\\) \\(.*\\)/\\1\\\t => \\2/' | sort
+    st = status
+    br = branch
+    co = checkout
+    ci = commit
+
+[core]
+    editor = vim -c \"set fenc=utf-8\"
+    excludesfile = /Users/msyksnhr/.gitignore
+[diff]
+    tool = icdiff
+[difftool]
+    prompt = false
+[difftool "icdiff"]
+    cmd = /usr/local/bin/git-icdiff --line-numbers $LOCAL $REMOTE
+[filter "media"]
+    clean = git-media-clean %f
+    smudge = git-media-smudge %f
+[ghq]
+    root = /Users/msyksnhr/src
+[credential]
+    helper = osxkeychain
+[filter "lfs"]
+    clean = git-lfs clean %f
+    smudge = git-lfs smudge %f
+    required = true
+[color]
+    ui = true
