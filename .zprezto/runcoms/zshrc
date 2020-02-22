@@ -74,13 +74,7 @@ bindkey '^r' search_history
 # rbenv
 eval "$(rbenv init -)"
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-export HOMEBREW_GITHUB_API_TOKEN=$(cat ~/.homebrew_github_api_token)
-export EDITOR=vi
-export VISUAL=vi
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 
 # powerline conf
 POWERLEVEL9K_DISABLE_RPROMPT=true
