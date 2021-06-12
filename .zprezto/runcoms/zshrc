@@ -6,9 +6,9 @@
 #
 
 # Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
+# if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+#  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+# fi
 
 # Customize to your needs...
 
@@ -46,6 +46,8 @@ alias python='python3'
 
 alias take='(){ mkdir -p "$@" && eval cd "\"\$$#\""; }'
 
+# option
+setopt autocd
 
 # history
 # for peco
@@ -83,4 +85,6 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 # override system ruby
 export PATH="/usr/local/opt/ruby/bin:${PATH}"
+
+# eval "$(starship init zsh)"
 
