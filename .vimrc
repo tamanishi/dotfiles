@@ -15,10 +15,12 @@ if &term =~ "xterm-256color" || "screen-256color"
   set t_Co=256
   set t_Sf=[3%dm
   set t_Sb=[4%dm
+  set t_ut=
 elseif &term =~ "xterm-color"
   set t_Co=8
   set t_Sf=[3%dm
   set t_Sb=[4%dm
+  set t_ut=
 endif
 
 hi PmenuSel cterm=reverse ctermfg=33 ctermbg=222 gui=reverse guifg=#3399ff guibg=#f0e68c
@@ -47,20 +49,24 @@ call dein#begin(s:dein_dir)
 
 let s:toml = '~/.vim/dein/dein.toml'
 
-if dein#load_cache([expand('<sfile>'), s:toml])
+if dein#load_state(s:dein_dir)
   call dein#load_toml(s:toml, {'lazy': 0})
-  call dein#save_cache()
 endif
-
-call dein#end()
 
 if dein#check_install()
   call dein#install()
 endif
-" dein end
+call dein#end()
 
-colorscheme molokai
+" colorscheme molokai
 " colorscheme hybrid
+colorscheme codedark
+
+" colorscheme gruvbox
+" set background=dark
+
+call dein#save_state()
+
 syntax on
 
 " forRust
@@ -75,4 +81,15 @@ let g:racer_experimental_completer = 1
 " forUnite
 nnoremap [unite] <Nop>
 nmap <Space>u [unite]
+
+" netrw
+filetype plugin on
+let g:netrw_banner=0
+let g:netrw_liststyle=3
+let g:netrw_browse_split=4
+
+"let g:netrw_preview=1
+"let g:netrw_altv=1
+let g:netrw_alto=1
+let g:netrw_winsize=80
 
