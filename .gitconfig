@@ -36,3 +36,5 @@
 	diff = auto
 	status = auto
 	branch = auto
+[init]
+	defaultBranch = main
